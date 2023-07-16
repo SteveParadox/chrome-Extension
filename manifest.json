@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Screen Capture Extension",
+    "version": "1.0",
+    "description": "A Chrome extension to capture and send screenshots as email",
+    "permissions": [
+      "activeTab",
+      "<all_urls>"
+    ],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_title": "Capture Screenshot"
+    },
+    "background": {
+      "scripts": [
+        "background.js"
+      ],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": [
+          "content.js"
+        ]
+      }
+    ],
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+  
